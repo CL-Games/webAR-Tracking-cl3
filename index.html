@@ -23,12 +23,20 @@
     color: white;
   }
 </style>
-
+<script>
+  var SceneE1 = document.createElement('a-entity');
+  SceneE1.addEventListener('markerFound', function(event){
+   console.log('辨識物是: ' + event);
+  });
+  SceneE1.addEventListener('markerLost', (event) => {
+   console.log('標記遺失 ' + event);
+  });
+</script>
 <body style="margin : 0px; overflow: hidden;">
   <!-- minimal loader shown until image descriptors are loaded. Loading may take a while according to the device computational power -->
-  <div class="arjs-loader">
+  <!-- <div class="arjs-loader">
     <div>Loading, please wait...</div>
-  </div>
+  </div>-->
 
   <!-- a-frame scene -->
   <a-scene
